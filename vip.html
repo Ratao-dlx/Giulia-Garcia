@@ -20,27 +20,61 @@
         </nav>
     </header>
 
-    <section class="hero" style="flex-direction: column; text-align: center; padding-top: 160px;">
+    <section class="hero" style="flex-direction: column; text-align: center; padding-top: 140px;">
         
-        <div class="vip-header" style="max-width: 800px; margin: 0 auto; margin-bottom: 40px;">
-            <span style="color: #e60000; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem;">Vagas Limitadas</span>
-            <h1 style="font-size: 3rem; margin-top: 10px;">O que o Instagram deletaria em 5 minutos.</h1>
-            <p style="font-size: 1.2rem; color: #d0d0d0;">Você viu o começo. Agora descubra o que acontece quando a porta daquele apartamento na Beira-Mar se fecha e eu fico sozinha.</p>
+        <div class="vip-header" style="max-width: 800px; margin: 0 auto; margin-bottom: 40px; padding: 0 20px;">
+            <span style="color: #e60000; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem;">Escolha seu nível de acesso</span>
+            <h1 style="font-size: clamp(2rem, 5vw, 3rem); margin-top: 10px;">O que a Beira-Mar esconde de você?</h1>
         </div>
 
-        <div class="vip-container" style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; max-width: 900px; width: 100%;">
+        <div class="vip-container" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; max-width: 1100px; width: 100%; padding: 20px;">
             
-            <div class="vip-card benefits" style="background: #111; padding: 40px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.05); flex: 1; min-width: 300px; text-align: left;">
-                <h3 style="font-size: 1.5rem; margin-bottom: 20px; border-bottom: 1px solid #333; padding-bottom: 10px;">O que você destrava agora:</h3>
-                <ul style="list-style: none; line-height: 2.5; color: #bbb;">
-                    <li><span style="color: #e60000; margin-right: 10px;">✔</span> <b>Fotos diárias sem censura</b> (Vestiário, banho, quarto)</li>
-                    <li><span style="color: #e60000; margin-right: 10px;">✔</span> <b>Vídeos amadores exclusivos</b> (Gravados pelo meu celular)</li>
-                    <li><span style="color: #e60000; margin-right: 10px;">✔</span> <b>Chat Privado</b> (Eu respondo você diretamente)</li>
-                    <li><span style="color: #e60000; margin-right: 10px;">✔</span> <b>Conteúdo sob demanda</b> (Peça e eu gravo)</li>
-                    <li><span style="color: #e60000; margin-right: 10px;">✔</span> <b>Acesso ao meu "Diário Sujo"</b> completo</li>
+            <div class="vip-card" style="background: #111; padding: 30px; border-radius: 20px; border: 1px solid #333; flex: 1; min-width: 280px; max-width: 320px; transition: transform 0.3s ease;">
+                <h3 style="font-size: 1.2rem; color: #888;">Bronze</h3>
+                <div style="font-size: 2.5rem; font-weight: 900; margin: 15px 0;">R$ 39<span style="font-size: 1rem;">,90</span></div>
+                <ul style="list-style: none; text-align: left; font-size: 0.9rem; color: #bbb; line-height: 2;">
+                    <li>✔ Galeria de Fotos (Mensal)</li>
+                    <li>✔ Diário Completo</li>
+                    <li>✖ Sem Vídeos</li>
                 </ul>
+                <a href="#" class="cta-button" style="width: 100%; margin-top: 25px; padding: 15px 0; font-size: 0.8rem; animation: none; background: #333;">Assinar Bronze</a>
             </div>
 
-            <div class="vip-card checkout" style="background: linear-gradient(145deg, #1a0000, #000000); padding: 40px; border-radius: 20px; border: 1px solid #e60000; flex: 1; min-width: 300px; position: relative; box-shadow: 0 10px 30px rgba(230,0,0,0.15);">
-                
-                <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: #e60000; padding: 5px 20px; border-radius: 20px; font-weight: bold;
+            <div class="vip-card" style="background: linear-gradient(145deg, #1a0000, #000); padding: 40px; border-radius: 20px; border: 2px solid #e60000; flex: 1; min-width: 300px; max-width: 350px; position: relative; transform: scale(1.05); box-shadow: 0 15px 40px rgba(230,0,0,0.2);">
+                <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: #e60000; padding: 5px 20px; border-radius: 20px; font-weight: bold; font-size: 0.7rem; letter-spacing: 1px;">MAIS POPULAR</div>
+                <h3 style="font-size: 1.4rem; color: #fff;">Prata (VIP)</h3>
+                <div style="font-size: 3rem; font-weight: 900; margin: 15px 0; color: #fff;">R$ 69<span style="font-size: 1rem;">,90</span></div>
+                <ul style="list-style: none; text-align: left; font-size: 0.95rem; color: #ddd; line-height: 2.2;">
+                    <li>✔ <b>Tudo do Bronze</b></li>
+                    <li>✔ <b>Vídeos Amadores Exclusivos</b></li>
+                    <li>✔ <b>Atualizações Diárias</b></li>
+                    <li>✔ <b>Chat no Telegram</b></li>
+                </ul>
+                <a href="#" class="cta-button" style="width: 100%; margin-top: 25px; padding: 20px 0;">Liberar VIP Agora</a>
+            </div>
+
+            <div class="vip-card" style="background: #111; padding: 30px; border-radius: 20px; border: 1px solid #333; flex: 1; min-width: 280px; max-width: 320px;">
+                <h3 style="font-size: 1.2rem; color: #888;">Ouro (Personal)</h3>
+                <div style="font-size: 2.5rem; font-weight: 900; margin: 15px 0;">R$ 149<span style="font-size: 1rem;">,90</span></div>
+                <ul style="list-style: none; text-align: left; font-size: 0.9rem; color: #bbb; line-height: 2;">
+                    <li>✔ <b>Tudo do VIP</b></li>
+                    <li>✔ <b>Pedidos de Fotos Custom</b></li>
+                    <li>✔ <b>Chamada de Vídeo (1x mês)</b></li>
+                    <li>✔ <b>Acesso trimestral</b></li>
+                </ul>
+                <a href="#" class="cta-button" style="width: 100%; margin-top: 25px; padding: 15px 0; font-size: 0.8rem; animation: none; background: #333;">Assinar Ouro</a>
+            </div>
+
+        </div>
+
+        <div style="margin-top: 40px; font-size: 0.8rem; color: #444; padding-bottom: 60px;">
+            🔒 Pagamento processado de forma segura e discreta.
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 Giulia Garcia. Conteúdo restrito para maiores de 18 anos.
+    </footer>
+
+</body>
+</html>
