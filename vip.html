@@ -81,7 +81,41 @@
     </style>
 </head>
 <body>
+    <style>
+    .nav-simple {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        padding: 15px;
+        background: rgba(18, 18, 20, 0.8);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid #27272a;
+        position: fixed;
+        top: 40px; /* Abaixo do timer de escassez */
+        left: 0;
+        width: 100%;
+        z-index: 9997;
+    }
+    .nav-link {
+        color: #a1a1aa;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: 0.3s;
+    }
+    .nav-link:hover { color: #ffffff; }
+    
+    /* Ajuste para o conteúdo não subir demais */
+    body { padding-top: 100px !important; }
+</style>
 
+<nav class="nav-simple">
+    <a href="index.html" class="nav-link">Início</a>
+    <a href="diario.html" class="nav-link">Diário</a>
+    <a href="galeria.html" class="nav-link">Galeria</a>
+</nav>
     <div class="timer-container">
         ⚠️ Oportunidade Única: Fechamento do VIP em <span id="countdown-timer">15:00</span>
     </div>
