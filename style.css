@@ -1,257 +1,271 @@
 /* --- 1. Reset e Base --- */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background-color: #050505;
-    color: #ffffff;
-    line-height: 1.6;
-    overflow-x: hidden;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #050505;
+  color: #ffffff;
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
 /* --- 2. Cabeçalho e Navegação (Navbar) --- */
 header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 20px 5%;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between; /* Logo de um lado, menu do outro */
-    align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 5%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between; /* Logo de um lado, menu do outro */
+  align-items: center;
 }
 
 .logo {
-    font-weight: 900;
-    letter-spacing: 5px;
-    font-size: 1.2rem;
-    color: #fff;
-    text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 5px;
+  font-size: 1.2rem;
+  color: #fff;
+  text-transform: uppercase;
 }
 
 .navbar ul {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-    align-items: center;
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  align-items: center;
 }
 
 .navbar a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 500;
-    transition: color 0.3s ease;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-.navbar a:hover, .navbar a.active {
-    color: #e60000;
+.navbar a:hover,
+.navbar a.active {
+  color: #e60000;
 }
 
 .navbar .vip-link {
-    border: 1px solid #e60000;
-    padding: 8px 20px;
-    border-radius: 20px;
-    color: #e60000;
-    font-weight: bold;
-    transition: all 0.3s ease;
+  border: 1px solid #e60000;
+  padding: 8px 20px;
+  border-radius: 20px;
+  color: #e60000;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
 
 .navbar .vip-link:hover {
-    background-color: #e60000;
-    color: #fff;
-    box-shadow: 0 5px 15px rgba(230, 0, 0, 0.4);
+  background-color: #e60000;
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(230, 0, 0, 0.4);
 }
 
 /* --- 3. Seção Principal (index.html) --- */
 .hero {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    padding: 140px 5% 60px;
-    min-height: 90vh;
-    gap: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 140px 5% 60px;
+  min-height: 90vh;
+  gap: 40px;
 }
 
 .hero-content {
-    max-width: 550px;
-    text-align: left;
+  max-width: 550px;
+  text-align: left;
 }
 
 h1 {
-    font-size: 3.5rem;
-    font-weight: 800;
-    line-height: 1.1;
-    margin-bottom: 20px;
-    background: linear-gradient(to right, #fff, #888);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #fff, #888);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 p {
-    font-size: 1.1rem;
-    color: #b0b0b0;
-    margin-bottom: 30px;
+  font-size: 1.1rem;
+  color: #b0b0b0;
+  margin-bottom: 30px;
 }
 
 .cta-button {
-    display: inline-block;
-    padding: 18px 45px;
-    background-color: #e60000;
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-radius: 50px;
-    transition: all 0.3s ease;
-    box-shadow: 0 10px 20px rgba(230, 0, 0, 0.3);
-    animation: pulse 2s infinite ease-in-out;
+  display: inline-block;
+  padding: 18px 45px;
+  background-color: #e60000;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(230, 0, 0, 0.3);
+  animation: pulse 2s infinite ease-in-out;
 }
 
 .cta-button:hover {
-    background-color: #ff0000;
-    transform: translateY(-3px);
-    box-shadow: 0 15px 25px rgba(230, 0, 0, 0.5);
+  background-color: #ff0000;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 25px rgba(230, 0, 0, 0.5);
 }
 
 @keyframes pulse {
-    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(230, 0, 0, 0.7); }
-    70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(230, 0, 0, 0); }
-    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(230, 0, 0, 0); }
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(230, 0, 0, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 15px rgba(230, 0, 0, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(230, 0, 0, 0);
+  }
 }
 
 .hero-image img {
-    width: 100%;
-    max-width: 380px;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-    transition: transform 0.5s ease;
+  width: 100%;
+  max-width: 380px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  transition: transform 0.5s ease;
 }
 
 .hero-image img:hover {
-    transform: scale(1.02);
+  transform: scale(1.02);
 }
 
 /* --- 4. Galeria Privada (galeria.html) --- */
 .gallery-section {
-    padding: 140px 5% 60px;
-    text-align: center;
+  padding: 140px 5% 60px;
+  text-align: center;
 }
 
 .gallery-header h2 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
 }
 
 .gallery-header p {
-    color: #b0b0b0;
-    margin-bottom: 40px;
+  color: #b0b0b0;
+  margin-bottom: 40px;
 }
 
 .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    max-width: 1000px;
-    margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .gallery-item {
-    position: relative;
-    border-radius: 15px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    aspect-ratio: 4/5; /* Mantém as fotos com proporção de feed de Instagram */
-    background-color: #111;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  aspect-ratio: 4/5; /* Mantém as fotos com proporção de feed de Instagram */
+  background-color: #111;
 }
 
 .gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
 .gallery-item:hover img {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 /* Efeito de Bloqueio (Blur + Cadeado) */
 .gallery-item.locked img {
-    filter: blur(12px) brightness(0.5);
+  filter: blur(12px) brightness(0.5);
 }
 
 .lock-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-    pointer-events: none; /* Deixa o clique passar para a imagem, se houver link */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  pointer-events: none; /* Deixa o clique passar para a imagem, se houver link */
 }
 
 .lock-icon {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
 }
 
 .lock-text {
-    font-size: 0.9rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #fff;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
-    background: rgba(230, 0, 0, 0.9);
-    padding: 8px 15px;
-    border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  background: rgba(230, 0, 0, 0.9);
+  padding: 8px 15px;
+  border-radius: 8px;
 }
 
 /* --- 5. Footer --- */
 footer {
-    padding: 40px;
-    text-align: center;
-    font-size: 0.8rem;
-    color: #444;
-    border-top: 1px solid #111;
-    margin-top: 50px;
+  padding: 40px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #444;
+  border-top: 1px solid #111;
+  margin-top: 50px;
 }
 
 /* --- 6. Responsividade (Mobile) --- */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        gap: 15px;
-        padding: 15px;
-    }
-    
-    .navbar ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
-    
-    h1 { font-size: 2.5rem; }
-    
-    .hero { 
-        text-align: center; 
-        padding-top: 180px; /* Ajuste para o menu maior no mobile */
-    }
-    
-    .hero-content { text-align: center; }
+  header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .navbar ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero {
+    text-align: center;
+    padding-top: 180px; /* Ajuste para o menu maior no mobile */
+  }
+
+  .hero-content {
+    text-align: center;
+  }
 }
