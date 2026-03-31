@@ -1,78 +1,38 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galeria | Giulia Garcia</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css">
     <style>
-      .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 15px;
-        margin-bottom: 50px;
-      }
-      .gallery-item {
-        height: 300px;
-        background: var(--card-bg);
-        border-radius: 12px;
-        border: 1px solid var(--border);
-        position: relative;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .locked {
-        filter: blur(8px);
-        opacity: 0.5;
-        width: 100%;
-        height: 100%;
-        background: #27272a;
-      }
-      .lock-icon {
-        position: absolute;
-        z-index: 10;
-        font-size: 40px;
-      }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 50px; }
+        .gallery-item { height: 350px; background: var(--card-bg); border-radius: 16px; border: 1px solid var(--border); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(5px); }
+        .locked-layer { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); backdrop-filter: blur(12px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; }
+        .lock-icon { font-size: 40px; }
+        .lock-text { color: var(--accent); font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <nav class="navbar">
-      <a href="/">Início</a>
-      <a href="/diario">Diário</a>
-      <a href="/galeria" class="active">Galeria</a>
-      <a href="/vip">Acesso VIP</a>
+        <a href="/">Início</a>
+        <a href="/diario">Diário</a>
+        <a href="/galeria" class="active">Galeria</a>
+        <a href="/vip">Acesso VIP</a>
     </nav>
 
     <div class="container">
-      <h1 class="hero-title">Galeria <span>Privada</span></h1>
-      <p class="hero-subtitle">
-        Mais de 500+ mídias exclusivas esperando por você.
-      </p>
+        <h1 class="hero-title">Galeria <span>Privada</span></h1>
+        <p class="hero-subtitle">Mais de 500+ mídias exclusivas e sem censura esperando por você.</p>
 
-      <div class="gallery-grid">
-        <div class="gallery-item">
-          <div class="locked"></div>
-          <div class="lock-icon">🔒</div>
+        <div class="gallery-grid">
+            <div class="gallery-item"><div class="locked-layer"><div class="lock-icon">🔒</div><div class="lock-text">Exclusivo VIP</div></div></div>
+            <div class="gallery-item"><div class="locked-layer"><div class="lock-icon">🔒</div><div class="lock-text">Exclusivo VIP</div></div></div>
+            <div class="gallery-item"><div class="locked-layer"><div class="lock-icon">🔒</div><div class="lock-text">Exclusivo VIP</div></div></div>
+            <div class="gallery-item"><div class="locked-layer"><div class="lock-icon">🔒</div><div class="lock-text">Exclusivo VIP</div></div></div>
         </div>
-        <div class="gallery-item">
-          <div class="locked"></div>
-          <div class="lock-icon">🔒</div>
-        </div>
-        <div class="gallery-item">
-          <div class="locked"></div>
-          <div class="lock-icon">🔒</div>
-        </div>
-        <div class="gallery-item">
-          <div class="locked"></div>
-          <div class="lock-icon">🔒</div>
-        </div>
-      </div>
 
-      <a href="/vip" class="btn btn-main" style="max-width: 400px"
-        >DESBLOQUEAR GALERIA (R$ 39,90)</a
-      >
+        <a href="/vip" class="btn btn-main" style="max-width: 400px; width: 100%;">DESBLOQUEAR GALERIA</a>
     </div>
-  </body>
+</body>
 </html>

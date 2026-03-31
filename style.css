@@ -1,106 +1,53 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap');
 
 :root {
-  --bg: #050505;
-  --card-bg: #111111;
-  --accent: #d4af37; /* Dourado Premium */
-  --text-main: #ffffff;
-  --text-dim: #a1a1aa;
-  --border: #27272a;
-  --success: #22c55e;
+    --bg: #09090b;
+    --card-bg: rgba(24, 24, 27, 0.6);
+    --accent: #d4af37; /* Dourado */
+    --accent-hover: #ebd57d;
+    --text-main: #f4f4f5;
+    --text-dim: #a1a1aa;
+    --border: rgba(63, 63, 70, 0.4);
+    --success: #10b981;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Inter", sans-serif;
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+
+body { 
+    background-color: var(--bg); color: var(--text-main); 
+    line-height: 1.6; padding-top: 100px; padding-bottom: 60px;
+    -webkit-font-smoothing: antialiased;
 }
 
-body {
-  background-color: var(--bg);
-  color: var(--text-main);
-  line-height: 1.6;
-  overflow-x: hidden;
-  padding-top: 100px; /* Espaço para a navbar */
-  -webkit-font-smoothing: antialiased;
-}
-
-/* NAVEGAÇÃO GLOBAL (URLs Limpas) */
+/* NAVBAR PREMIUM COM BLUR */
 .navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 60px;
-  background: rgba(5, 5, 5, 0.8);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
+    position: fixed; top: 0; left: 0; width: 100%; height: 70px;
+    background: rgba(9, 9, 11, 0.7); backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border); z-index: 1000;
+    display: flex; justify-content: center; align-items: center; gap: 40px;
 }
-
 .navbar a {
-  color: var(--text-dim);
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: 0.3s;
+    color: var(--text-dim); text-decoration: none; font-size: 14px;
+    font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; transition: 0.3s;
 }
-
-.navbar a:hover,
-.navbar a.active {
-  color: var(--text-main);
-}
+.navbar a:hover, .navbar a.active { color: var(--accent); }
 
 /* CONTAINERS E BOTÕES GLOBAIS */
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 20px;
-  text-align: center;
-}
+.container { max-width: 1000px; margin: 0 auto; padding: 0 20px; text-align: center; }
 
 .btn {
-  display: inline-block;
-  padding: 16px 32px;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: 800;
-  text-align: center;
-  transition: 0.3s;
-  text-transform: uppercase;
-  font-size: 14px;
-  cursor: pointer;
+    display: inline-block; padding: 18px 32px; border-radius: 12px;
+    text-decoration: none; font-weight: 800; text-align: center;
+    transition: all 0.3s ease; text-transform: uppercase; font-size: 14px; letter-spacing: 1px;
 }
+.btn-main { 
+    background: linear-gradient(90deg, #d4af37, #f3e5ab, #d4af37); background-size: 200% auto;
+    color: #000; box-shadow: 0 4px 20px rgba(212, 175, 55, 0.2); animation: shine 3s linear infinite;
+}
+.btn-main:hover { transform: translateY(-2px); box-shadow: 0 6px 25px rgba(212, 175, 55, 0.4); }
+@keyframes shine { to { background-position: 200% center; } }
 
-.btn-main {
-  background: var(--accent);
-  color: black;
-  box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
-  width: 100%;
-}
-.btn-main:hover {
-  transform: scale(1.02);
-  filter: brightness(1.1);
-}
-
-.hero-title {
-  font-size: 42px;
-  font-weight: 900;
-  letter-spacing: -1px;
-  margin-bottom: 15px;
-}
-.hero-title span {
-  color: var(--accent);
-}
-.hero-subtitle {
-  color: var(--text-dim);
-  font-size: 18px;
-  margin-bottom: 40px;
-}
+/* TEXTOS BASE */
+.hero-title { font-size: 46px; font-weight: 900; letter-spacing: -1px; margin-bottom: 15px; }
+.hero-title span { color: var(--accent); }
+.hero-subtitle { color: var(--text-dim); font-size: 18px; margin-bottom: 50px; }
