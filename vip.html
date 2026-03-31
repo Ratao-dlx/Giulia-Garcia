@@ -2,56 +2,117 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>VIP | Giulia Garcia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIP Checkout | Giulia Garcia</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .timer-top { position: fixed; top: 0; width: 100%; height: 35px; background: var(--clr-primary); z-index: 10000; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 12px; }
-        .plan-card { background: var(--clr-surface); padding: 40px; border-radius: 20px; border: 1px solid var(--clr-border); display: flex; flex-direction: column; transition: 0.3s; }
-        .plan-card.featured { border: 2px solid var(--clr-primary); transform: scale(1.05); box-shadow: 0 0 40px rgba(208, 0, 0, 0.2); }
-        #toast { position: fixed; bottom: 30px; left: 30px; background: #18181b; padding: 15px 25px; border-radius: 12px; border-left: 4px solid var(--clr-primary); visibility: hidden; opacity: 0; transition: 0.5s; z-index: 10000; }
-        #toast.show { visibility: visible; opacity: 1; }
+        body { padding-top: 130px; }
+        .navbar { top: 40px; }
+        
+        .timer-top { position: fixed; top: 0; left: 0; width: 100%; height: 40px; background: var(--clr-primary); color: white; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 14px; z-index: 10000; letter-spacing: 1.5px; text-transform: uppercase; box-shadow: 0 4px 15px var(--clr-primary-glow); }
+        
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin: 50px 0; }
+        .pricing-card { background: var(--clr-surface); padding: 40px 30px; border-radius: 16px; border: 1px solid var(--clr-border); text-align: left; position: relative; display: flex; flex-direction: column; }
+        
+        /* Destaque Ouro totalmente Carmesim */
+        .pricing-card.destaque { border: 2px solid var(--clr-primary); transform: scale(1.05); box-shadow: 0 0 50px rgba(208, 0, 0, 0.2); background: linear-gradient(180deg, var(--clr-surface-light), var(--clr-bg)); z-index: 10; }
+        .tag-recomendado { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--clr-primary); color: #fff; padding: 5px 20px; border-radius: 20px; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; }
+
+        .plan-title { font-size: 16px; font-weight: 800; color: var(--clr-text-dim); text-transform: uppercase; margin-bottom: 15px; }
+        .pricing-card.destaque .plan-title { color: var(--clr-primary); }
+        
+        .plan-price { font-size: 46px; font-weight: 900; margin-bottom: 30px; color: #fff; display: flex; align-items: baseline; gap: 5px; }
+        .plan-price span { font-size: 16px; font-weight: 400; color: var(--clr-text-dim); }
+        
+        .plan-features { list-style: none; margin-bottom: 40px; flex-grow: 1; }
+        .plan-features li { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 15px; font-size: 15px; color: #d4d4d8; }
+        .check-icon { color: var(--clr-primary); font-weight: 900; font-size: 18px; }
+        .cross-icon { color: var(--clr-text-dim); font-weight: 900; font-size: 18px; }
+        .disabled-text { color: var(--clr-text-dim); text-decoration: line-through; }
     </style>
 </head>
-<body style="padding-top: 115px;">
-    <div class="timer-top">OFERTA TERMINA EM: <span id="clock" style="margin-left: 10px;">15:00</span></div>
-    <nav class="navbar" style="top: 35px;"><a href="/">Início</a><a href="/diario">Diário</a><a href="/galeria">Galeria</a><a href="/vip" class="active">Acesso VIP</a></nav>
+<body>
+    <div class="timer-top">⚠️ VAGAS ENCERRANDO EM: <span id="timer" style="margin-left: 8px;">15:00</span></div>
+    
+    <nav class="navbar">
+        <a href="/">Início</a>
+        <a href="/diario">Diário</a>
+        <a href="/galeria">Galeria</a>
+        <a href="/vip" class="active">Acesso VIP</a>
+    </nav>
 
-    <main class="container">
-        <h1 class="hero-title" style="text-align: center;">NÍVEL DE <span>ACESSO</span></h1>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 50px;">
-            <div class="plan-card featured">
-                <p style="color: var(--clr-primary); font-weight: 900; font-size: 12px; text-transform: uppercase;">Mais Escolhido</p>
-                <h2 style="font-size: 2.5rem; margin: 15px 0;">Ouro Personal</h2>
-                <h3 style="font-size: 2rem; margin-bottom: 25px;">R$ 149,90</h3>
-                <ul style="list-style: none; margin-bottom: 30px; color: #d4d4d8;">
-                    <li>✓ Chat 1 a 1 Direto</li>
-                    <li>✓ Pedidos Personalizados</li>
-                    <li>✓ Acesso Total ao Acervo</li>
+    <main class="container" style="text-align: center;">
+        <h1 class="hero-title">NÍVEL DE <span>ACESSO</span></h1>
+        <p style="color: var(--clr-text-dim); font-size: 1.1rem;">Liberação imediata pela Kiwify.</p>
+
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <div class="plan-title">Pacote Bronze</div>
+                <div class="plan-price">R$ 39,90<span>/mês</span></div>
+                <ul class="plan-features">
+                    <li><span class="check-icon">✓</span> Galeria do Feed sem censura</li>
+                    <li><span class="check-icon">✓</span> Vídeos Curtos Semanais</li>
+                    <li class="disabled-text"><span class="cross-icon">✗</span> Chat Privado com a Giulia</li>
+                    <li class="disabled-text"><span class="cross-icon">✗</span> Pedidos de fotos exclusivas</li>
                 </ul>
-                <a href="https://pay.kiwify.com.br/FcTkho0" class="btn-cta">Garantir Meu Lugar</a>
+                <a href="https://pay.kiwify.com.br/lCS8Yf4" class="btn-cta btn-cta--ghost">Assinar Bronze</a>
             </div>
+
+            <div class="pricing-card destaque">
+                <div class="tag-recomendado">Acesso Total</div>
+                <div class="plan-title">Ouro Personal</div>
+                <div class="plan-price" style="color: var(--clr-primary);">R$ 149,90<span>/trimestre</span></div>
+                <ul class="plan-features">
+                    <li><span class="check-icon">✓</span> <strong>Chat 1 a 1 Direto Comigo</strong></li>
+                    <li><span class="check-icon">✓</span> Acesso irrestrito a Mídias Ocultas</li>
+                    <li><span class="check-icon">✓</span> <strong>1 Pedido Exclusivo em Vídeo / Mês</strong></li>
+                    <li><span class="check-icon">✓</span> Close Friends Instagram VIP</li>
+                </ul>
+                <a href="https://pay.kiwify.com.br/FcTkho0" class="btn-cta btn-cta--red">Desbloquear Acesso Ouro</a>
             </div>
+
+            <div class="pricing-card">
+                <div class="plan-title">Pacote Prata</div>
+                <div class="plan-price">R$ 69,90<span>/mês</span></div>
+                <ul class="plan-features">
+                    <li><span class="check-icon">✓</span> Áudios provocantes diários</li>
+                    <li><span class="check-icon">✓</span> Grupo VIP Silenciado</li>
+                    <li class="disabled-text"><span class="cross-icon">✗</span> Atendimento VIP Individual</li>
+                    <li class="disabled-text"><span class="cross-icon">✗</span> Pedidos exclusivos</li>
+                </ul>
+                <a href="https://pay.kiwify.com.br/15CyLBQ" class="btn-cta btn-cta--ghost">Assinar Prata</a>
+            </div>
+        </div>
+
+        <div style="font-size: 13px; color: var(--clr-text-dim); display: flex; justify-content: center; align-items: center; gap: 8px;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: var(--clr-primary);"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+            Pagamento 100% Seguro, processado anonimamente pela Kiwify.
+        </div>
     </main>
 
-    <div id="toast"><span id="toast-text"></span></div>
+    <div id="toast" style="position: fixed; bottom: -100px; left: 50%; transform: translateX(-50%); background: #18181b; padding: 15px 25px; border-radius: 8px; border-left: 4px solid var(--clr-primary); visibility: hidden; opacity: 0; transition: 0.5s; z-index: 10000; box-shadow: 0 10px 30px rgba(0,0,0,0.8); display: flex; align-items: center; gap: 15px; font-size: 14px; min-width: 300px;">
+        <div style="width: 10px; height: 10px; background: var(--clr-primary); border-radius: 50%; box-shadow: 0 0 15px var(--clr-primary);"></div>
+        <span id="toast-text"></span>
+    </div>
 
     <script>
-        // Timer Robusto
-        let time = 900;
-        setInterval(() => {
-            let m = Math.floor(time / 60), s = time % 60;
-            document.getElementById('clock').innerText = `${m}:${s < 10 ? '0' + s : s}`;
-            time--;
+        // Sistema de Timer de Escassez
+        let timeInSeconds = sessionStorage.getItem("timer_carmesim") ? parseInt(sessionStorage.getItem("timer_carmesim")) : 15 * 60;
+        setInterval(function () {
+            let mins = parseInt(timeInSeconds / 60, 10);
+            let secs = parseInt(timeInSeconds % 60, 10);
+            document.querySelector('#timer').textContent = `${mins < 10 ? '0'+mins : mins}:${secs < 10 ? '0'+secs : secs}`;
+            if (--timeInSeconds > 0) sessionStorage.setItem("timer_carmesim", timeInSeconds);
         }, 1000);
 
-        // Social Proof
-        const names = ["Marcos", "André", "Júlio", "Felipe", "Ricardo", "Gustavo"];
+        // Sistema de Prova Social Fake
+        const nomes = ["Lucas M.", "Rafael T.", "João V.", "Pedro S.", "Matheus C.", "Gabriel A.", "Felipe R.", "Thiago P."];
         setInterval(() => {
             const toast = document.getElementById('toast');
-            document.getElementById('toast-text').innerText = `${names[Math.floor(Math.random()*names.length)]} acabou de entrar no VIP!`;
-            toast.classList.add('show');
-            setTimeout(() => toast.classList.remove('show'), 4000);
-        }, 12000);
+            document.getElementById('toast-text').innerHTML = `<strong>${nomes[Math.floor(Math.random()*nomes.length)]}</strong> acabou de assinar o plano Ouro!`;
+            toast.style.bottom = '30px'; toast.style.visibility = 'visible'; toast.style.opacity = '1';
+            setTimeout(() => { toast.style.bottom = '-100px'; toast.style.opacity = '0'; }, 4000);
+        }, 18000);
     </script>
 </body>
 </html>
