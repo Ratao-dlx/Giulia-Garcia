@@ -4,63 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>VIP Premium | Giulia Garcia</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="style.css" />
     <style>
-      :root {
-        --bg: #050505;
-        --card-bg: #111111;
-        --accent: #d4af37; /* Dourado */
-        --text-main: #ffffff;
-        --text-dim: #a1a1aa;
-        --border: #27272a;
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Inter", sans-serif;
-      }
+      /* Ajuste específico para a página VIP ter o timer no topo */
       body {
-        background-color: var(--bg);
-        color: var(--text-main);
-        line-height: 1.6;
-        overflow-x: hidden;
         padding-top: 110px;
       }
-
-      /* NAVEGAÇÃO */
       .navbar {
-        position: fixed;
         top: 40px;
-        left: 0;
-        width: 100%;
-        height: 60px;
-        background: rgba(5, 5, 5, 0.8);
-        backdrop-filter: blur(12px);
-        border-bottom: 1px solid var(--border);
-        z-index: 1000;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 30px;
-      }
-      .navbar a {
-        color: var(--text-dim);
-        text-decoration: none;
-        font-size: 13px;
-        font-weight: 500;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        transition: 0.3s;
-      }
-      .navbar a:hover,
-      .navbar a.active {
-        color: var(--text-main);
-      }
+      } /* Desce a navbar para o timer caber */
 
       /* TIMER */
       .timer-bar {
@@ -78,30 +30,6 @@
         font-size: 14px;
         z-index: 1001;
         letter-spacing: 0.5px;
-      }
-
-      .container {
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 0 20px;
-        text-align: center;
-      }
-
-      .hero {
-        margin-bottom: 50px;
-      }
-      .hero h1 {
-        font-size: 42px;
-        font-weight: 900;
-        letter-spacing: -1px;
-        margin-bottom: 10px;
-      }
-      .hero h1 span {
-        color: var(--accent);
-      }
-      .hero p {
-        color: var(--text-dim);
-        font-size: 18px;
       }
 
       /* GRID DE PREÇOS */
@@ -131,6 +59,7 @@
         border: 2px solid var(--accent);
         background: linear-gradient(180deg, #161616 0%, #050505 100%);
         box-shadow: 0 20px 40px rgba(212, 175, 55, 0.1);
+        padding: 50px 30px;
       }
       .badge {
         position: absolute;
@@ -182,40 +111,21 @@
         text-decoration: line-through;
       }
       .check {
-        color: #22c55e;
+        color: var(--success);
         font-weight: bold;
       }
       .card.featured .check {
         color: var(--accent);
       }
 
-      .btn {
-        display: block;
-        width: 100%;
-        padding: 18px;
-        border-radius: 12px;
-        text-decoration: none;
-        font-weight: 800;
-        text-align: center;
-        transition: 0.3s;
-        text-transform: uppercase;
-        font-size: 14px;
-      }
       .btn-sec {
         background: #27272a;
         color: white;
+        width: 100%;
+        border: 1px solid #3f3f46;
       }
       .btn-sec:hover {
         background: #3f3f46;
-      }
-      .btn-main {
-        background: var(--accent);
-        color: black;
-        box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
-      }
-      .btn-main:hover {
-        transform: scale(1.02);
-        filter: brightness(1.1);
       }
 
       /* TOAST */
@@ -234,6 +144,7 @@
         opacity: 0;
         transition: 0.5s;
         z-index: 2000;
+        font-size: 14px;
       }
       #toast.show {
         visibility: visible;
@@ -243,42 +154,33 @@
       .dot {
         width: 8px;
         height: 8px;
-        background: #22c55e;
+        background: var(--success);
         border-radius: 50%;
-        box-shadow: 0 0 10px #22c55e;
-      }
-
-      @media (max-width: 768px) {
-        .hero h1 {
-          font-size: 32px;
-        }
-        .pricing-grid {
-          grid-template-columns: 1fr;
-        }
+        box-shadow: 0 0 10px var(--success);
       }
     </style>
   </head>
   <body>
     <div class="timer-bar">
-      ⚠️ OFERTA TERMINA EM: <span id="timer">15:00</span>
+      ⚠️ VAGAS ENCERRANDO EM: <span id="timer">15:00</span>
     </div>
 
     <nav class="navbar">
-      <a href="index.html">Início</a>
-      <a href="diario.html">Diário</a>
-      <a href="galeria.html">Galeria</a>
-      <a href="vip.html" class="active">Acesso VIP</a>
+      <a href="/">Início</a>
+      <a href="/diario">Diário</a>
+      <a href="/galeria">Galeria</a>
+      <a href="/vip" class="active">Acesso VIP</a>
     </nav>
 
     <div class="container">
-      <header class="hero">
-        <h1>Escolha seu <span>Nível de Acesso</span></h1>
-        <p>Conteúdo exclusivo sem censura e suporte direto comigo.</p>
-      </header>
+      <h1 class="hero-title">Escolha seu <span>Nível de Acesso</span></h1>
+      <p class="hero-subtitle">
+        Conteúdo exclusivo sem censura e suporte direto comigo.
+      </p>
 
       <div class="pricing-grid">
         <div class="card">
-          <p class="plan-name">Bronze</p>
+          <p class="plan-name">Pacote Bronze</p>
           <div class="price">R$ 39,90 <span>/mês</span></div>
           <ul class="features">
             <li><span class="check">✓</span> Fotos exclusivas</li>
@@ -305,7 +207,7 @@
               <strong>Tudo do Bronze e Prata</strong>
             </li>
             <li>
-              <span class="check">✓</span> <strong>Chat Direto 1-on-1</strong>
+              <span class="check">✓</span> <strong>Chat Direto 1 a 1</strong>
             </li>
             <li><span class="check">✓</span> Pedidos de mídias únicas</li>
             <li><span class="check">✓</span> Close Friends incluso</li>
@@ -341,25 +243,25 @@
     </div>
 
     <script>
-      // TIMER
-      function startTimer(duration, display) {
-        var timer = duration,
-          minutes,
-          seconds;
+      // TIMER DE ESCASSEZ
+      function startTimer() {
+        let timeInSecs = sessionStorage.getItem("gg_timer")
+          ? parseInt(sessionStorage.getItem("gg_timer"))
+          : 15 * 60;
+        const display = document.querySelector("#timer");
         setInterval(function () {
-          minutes = parseInt(timer / 60, 10);
-          seconds = parseInt(timer % 60, 10);
-          minutes = minutes < 10 ? "0" + minutes : minutes;
-          seconds = seconds < 10 ? "0" + seconds : seconds;
-          display.textContent = minutes + ":" + seconds;
-          if (--timer < 0) timer = duration;
+          let mins = parseInt(timeInSecs / 60, 10);
+          let secs = parseInt(timeInSecs % 60, 10);
+          mins = mins < 10 ? "0" + mins : mins;
+          secs = secs < 10 ? "0" + secs : secs;
+          display.textContent = mins + ":" + secs;
+          if (--timeInSecs < 0) timeInSecs = 0;
+          sessionStorage.setItem("gg_timer", timeInSecs);
         }, 1000);
       }
-      window.onload = function () {
-        startTimer(900, document.querySelector("#timer"));
-      };
+      window.onload = startTimer;
 
-      // PROVA SOCIAL
+      // PROVA SOCIAL TOAST
       const names = [
         "Marcos",
         "Andre",
@@ -367,22 +269,24 @@
         "Felipe",
         "Ricardo",
         "Gustavo",
+        "Thiago",
       ];
       const toast = document.getElementById("toast");
       const toastText = document.getElementById("toast-text");
 
       function showToast() {
         const name = names[Math.floor(Math.random() * names.length)];
-        toastText.innerText = `${name} acabou de assinar o VIP!`;
+        toastText.innerHTML = `<strong>${name}</strong> acabou de assinar o VIP!`;
         toast.classList.add("show");
         setTimeout(() => toast.classList.remove("show"), 4000);
       }
-      setInterval(showToast, 12000);
+      setTimeout(showToast, 3000);
+      setInterval(showToast, 18000);
 
-      // BACK REDIRECT
+      // BACK REDIRECT COM URL LIMPA (Manda para a Home se tentar sair)
       window.history.pushState({}, "", window.location.href);
       window.onpopstate = function () {
-        window.location.href = "index.html";
+        window.location.href = "/";
       };
     </script>
   </body>

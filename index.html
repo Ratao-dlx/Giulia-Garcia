@@ -3,41 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Giulia Garcia - O Segredo da Beira-Mar</title>
+    <title>Início | Giulia Garcia</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
-      <div class="logo">Giulia Garcia</div>
-      <nav class="navbar">
-        <ul>
-          <li><a href="index.html" class="active">Início</a></li>
-          <li><a href="galeria.html">Galeria Privada</a></li>
-          <li><a href="diario.html">Meu Diário</a></li>
-          <li><a href="vip.html" class="vip-link">Acesso VIP</a></li>
-        </ul>
-      </nav>
-    </header>
+    <nav class="navbar">
+      <a href="/" class="active">Início</a>
+      <a href="/diario">Diário</a>
+      <a href="/galeria">Galeria</a>
+      <a href="/vip">Acesso VIP</a>
+    </nav>
 
-    <section class="hero">
-      <div class="hero-content">
-        <h1>O que acontece na Beira-Mar, fica na Beira-Mar.</h1>
-        <p>
-          Casada, entediada e vivendo uma rotina que ninguém imagina entre um
-          treino e outro na ilha. Conheça o lado secreto da Giulia Garcia.
+    <div class="container">
+      <h1 class="hero-title">Bem-vindo ao meu <span>Mundo Privado</span></h1>
+      <p class="hero-subtitle">
+        Aqui você encontra o que o Instagram não deixa eu postar.
+      </p>
+
+      <div
+        style="
+          background: var(--card-bg);
+          border: 1px dashed var(--border);
+          height: 400px;
+          border-radius: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 40px;
+        "
+      >
+        <p style="color: var(--text-dim)">
+          [Inserir Imagem/Vídeo Chamativo Aqui]
         </p>
-        <a href="vip.html" class="cta-button">Descobrir o Segredo</a>
       </div>
-      <div class="hero-image">
-        <img
-          src="https://cdn3.mage.space/temp/30d/creations/Q6MmyA06HxWpTsEqrOz7yv4e9qk2/image/6a7c17280c283adba0ce4e674d2f832f.jpg"
-          alt="Giulia Garcia na Beira-Mar"
-        />
-      </div>
-    </section>
 
-    <footer>
-      &copy; 2026 Giulia Garcia. Conteúdo restrito para maiores de 18 anos.
-    </footer>
+      <div style="max-width: 400px; margin: 0 auto">
+        <a href="/vip" class="btn btn-main">DESBLOQUEAR TUDO AGORA</a>
+      </div>
+    </div>
   </body>
 </html>

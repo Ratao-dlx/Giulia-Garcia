@@ -3,107 +3,63 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Meu Diário - Giulia Garcia</title>
+    <title>Diário Íntimo | Giulia Garcia</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+      .diary-content {
+        text-align: left;
+        background: var(--card-bg);
+        padding: 40px;
+        border-radius: 20px;
+        border: 1px solid var(--border);
+        margin-bottom: 40px;
+        font-size: 16px;
+        color: #d4d4d8;
+      }
+      .diary-date {
+        color: var(--accent);
+        font-weight: bold;
+        font-size: 14px;
+        margin-bottom: 20px;
+        display: block;
+      }
+    </style>
   </head>
   <body>
-    <header>
-      <div class="logo">Giulia Garcia</div>
-      <nav class="navbar">
-        <ul>
-          <li><a href="index.html">Início</a></li>
-          <li><a href="galeria.html">Galeria Privada</a></li>
-          <li><a href="diario.html" class="active">Meu Diário</a></li>
-          <li><a href="vip.html" class="vip-link">Acesso VIP</a></li>
-        </ul>
-      </nav>
-    </header>
+    <nav class="navbar">
+      <a href="/">Início</a>
+      <a href="/diario" class="active">Diário</a>
+      <a href="/galeria">Galeria</a>
+      <a href="/vip">Acesso VIP</a>
+    </nav>
 
-    <section
-      class="gallery-section"
-      style="max-width: 800px; margin: 0 auto; text-align: left"
-    >
-      <div class="gallery-header" style="text-align: center">
-        <h2>Meu Diário</h2>
-        <p>Os pensamentos que eu não posso postar no Instagram.</p>
+    <div class="container" style="max-width: 800px">
+      <h1 class="hero-title">Meu <span>Diário</span></h1>
+      <p class="hero-subtitle">Os bastidores que ninguém vê.</p>
+
+      <div class="diary-content">
+        <span class="diary-date">Atualizado hoje</span>
+        <p>
+          Oi... Se você chegou até aqui, é porque quer saber um pouco mais do
+          que rola por trás das câmeras.
+        </p>
+        <br />
+        <p>
+          Eu decidi criar esse espaço porque estava cansada das restrições das
+          redes normais. Aqui no meu site oficial, eu posto meus conteúdos
+          diários, meus áudios privados e converso direto com quem realmente
+          importa.
+        </p>
+        <br />
+        <p>
+          Se você quer ter acesso total à minha galeria e falar comigo no chat
+          privado, escolha um dos planos VIP.
+        </p>
       </div>
 
-      <article
-        style="
-          background: #111;
-          padding: 30px;
-          border-radius: 15px;
-          margin-bottom: 30px;
-          border: 1px solid rgba(255, 255, 255, 0.05);
-        "
+      <a href="/vip" class="btn btn-main" style="max-width: 400px"
+        >QUERO ENTRAR PRO VIP</a
       >
-        <h3 style="color: #fff; margin-bottom: 10px">A ilusão da Beira-Mar</h3>
-        <span style="color: #e60000; font-size: 0.85rem; font-weight: bold"
-          >Publicado há 2 dias</span
-        >
-        <p
-          style="
-            margin-top: 15px;
-            font-size: 1.05rem;
-            color: #d0d0d0;
-            font-family: &quot;Georgia&quot;, serif;
-            line-height: 1.8;
-          "
-        >
-          "O silêncio desse apartamento de 300m² na Beira-Mar é pior que
-          qualquer grito. Ele viajou de novo, 'negócios' em São Paulo. Eu fico
-          aqui, olhando o mar pela sacada de vidro, com a minha melhor lingerie,
-          e ninguém pra notar. É uma piada. Criei esse espaço secreto porque eu
-          não aguento mais ser apenas a 'esposa troféu'. Eu tenho desejos... e
-          aqui eu posso contar todos eles."
-        </p>
-      </article>
-
-      <article
-        style="
-          background: #111;
-          padding: 30px;
-          border-radius: 15px;
-          margin-bottom: 30px;
-          border: 1px solid rgba(255, 255, 255, 0.05);
-        "
-      >
-        <h3 style="color: #fff; margin-bottom: 10px">
-          Treino de hoje e olhares
-        </h3>
-        <span style="color: #e60000; font-size: 0.85rem; font-weight: bold"
-          >Publicado há 5 dias</span
-        >
-        <p
-          style="
-            margin-top: 15px;
-            font-size: 1.05rem;
-            color: #d0d0d0;
-            font-family: &quot;Georgia&quot;, serif;
-            line-height: 1.8;
-          "
-        >
-          "Fui pra academia hoje de manhã. O vestiário estava vazio. Eu sei que
-          eles olham pelo espelho enquanto fingem focar nos pesos. Eu sinto a
-          tensão no ar. É a única diversão do meu dia: ver o desejo nos olhos
-          deles e saber que eles não podem me ter. Bom, pelo menos não no mundo
-          real. Tirei umas fotos no espelho depois do treino... o resultado do
-          agachamento está lá no VIP pra quem quiser conferir."
-        </p>
-      </article>
-
-      <div style="text-align: center; margin-top: 40px">
-        <a
-          href="vip.html"
-          class="cta-button"
-          style="font-size: 1rem; padding: 18px 40px"
-          >Ler os relatos proibidos no VIP</a
-        >
-      </div>
-    </section>
-
-    <footer>
-      &copy; 2026 Giulia Garcia. Conteúdo restrito para maiores de 18 anos.
-    </footer>
+    </div>
   </body>
 </html>
