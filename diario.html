@@ -1,59 +1,134 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Diário | Giulia Garcia</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <style>
-        .diary-feed { display: flex; flex-direction: column; gap: 30px; margin-bottom: 60px; }
-        .diary-post {
-            background: var(--clr-surface); padding: 40px; border-radius: 16px;
-            border: 1px solid var(--clr-border); text-align: left;
-        }
-        .post-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid var(--clr-border); padding-bottom: 15px; }
-        .post-date { color: var(--clr-primary); font-weight: 900; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }
-        .post-tag { background: rgba(208, 0, 0, 0.1); color: var(--clr-primary); padding: 4px 10px; border-radius: 4px; font-size: 10px; font-weight: 800; border: 1px solid rgba(208, 0, 0, 0.3); }
-        .post-text { font-size: 1.1rem; line-height: 1.8; color: #d4d4d8; }
-        .post-blur { filter: blur(5px); color: #fff; background: rgba(255,255,255,0.05); user-select: none; }
+      .diary-feed {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 60px;
+      }
+      .diary-post {
+        background: var(--clr-surface);
+        padding: 40px;
+        border-radius: 16px;
+        border: 1px solid var(--clr-border);
+        text-align: left;
+      }
+      .post-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        border-bottom: 1px solid var(--clr-border);
+        padding-bottom: 15px;
+      }
+      .post-date {
+        color: var(--clr-primary);
+        font-weight: 900;
+        font-size: 12px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+      .post-tag {
+        background: rgba(208, 0, 0, 0.1);
+        color: var(--clr-primary);
+        padding: 4px 10px;
+        border-radius: 4px;
+        font-size: 10px;
+        font-weight: 800;
+        border: 1px solid rgba(208, 0, 0, 0.3);
+      }
+      .post-text {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #d4d4d8;
+      }
+      .post-blur {
+        filter: blur(5px);
+        color: #fff;
+        background: rgba(255, 255, 255, 0.05);
+        user-select: none;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <nav class="navbar">
-        <a href="/">Início</a>
-        <a href="/diario" class="active">Diário</a>
-        <a href="/galeria">Galeria</a>
-        <a href="/vip">Acesso VIP</a>
+      <a href="/">Início</a>
+      <a href="/diario" class="active">Diário</a>
+      <a href="/galeria">Galeria</a>
+      <a href="/vip">Acesso VIP</a>
     </nav>
 
-    <main class="container" style="max-width: 800px; padding-top: 60px;">
-        <h1 class="hero-title" style="text-align: center; margin-bottom: 50px;">Relatos <span>Privados</span></h1>
+    <main class="container" style="max-width: 800px; padding-top: 60px">
+      <h1 class="hero-title" style="text-align: center; margin-bottom: 50px">
+        Relatos <span>Privados</span>
+      </h1>
 
-        <div class="diary-feed">
-            <article class="diary-post">
-                <div class="post-header"><span class="post-date">Hoje, 09:42 AM</span><span class="post-tag">Áudio + Vídeo</span></div>
-                <p class="post-text">Acordei com uma preguiça absurda hoje... O clima aqui em Floripa amanheceu chuvoso e a única coisa que eu queria era alguém para me ajudar a tirar essa lingerie de renda vermelha que está me apertando. Gravei um vídeo mostrando <span class="post-blur">exatamente como eu estou tocando</span> e sussurrando no áudio como eu queria que você fizesse. Tá lá no grupo VIP.</p>
-            </article>
+      <div class="diary-feed">
+        <article class="diary-post">
+          <div class="post-header">
+            <span class="post-date">Hoje, 09:42 AM</span
+            ><span class="post-tag">Áudio + Vídeo</span>
+          </div>
+          <p class="post-text">
+            Acordei com uma preguiça absurda hoje... O clima aqui em Floripa
+            amanheceu chuvoso e a única coisa que eu queria era alguém para me
+            ajudar a tirar essa lingerie de renda vermelha que está me
+            apertando. Gravei um vídeo mostrando
+            <span class="post-blur">exatamente como eu estou tocando</span> e
+            sussurrando no áudio como eu queria que você fizesse. Tá lá no grupo
+            VIP.
+          </p>
+        </article>
 
-            <article class="diary-post">
-                <div class="post-header"><span class="post-date">Ontem, 23:15 PM</span><span class="post-tag">Mídia Oculta</span></div>
-                <p class="post-text">Sabe aquele tédio de domingo à noite? Resolvi brincar um pouco de frente pro espelho do quarto. A intenção era só tirar uma foto pro feed, mas eu acabei me empolgando. O resultado ficou tão... explícito, que a calcinha foi parar no chão da sala. Tive que censurar pro Insta, mas acabei de postar a versão 100% crua no nosso chat.</p>
-            </article>
+        <article class="diary-post">
+          <div class="post-header">
+            <span class="post-date">Ontem, 23:15 PM</span
+            ><span class="post-tag">Mídia Oculta</span>
+          </div>
+          <p class="post-text">
+            Sabe aquele tédio de domingo à noite? Resolvi brincar um pouco de
+            frente pro espelho do quarto. A intenção era só tirar uma foto pro
+            feed, mas eu acabei me empolgando. O resultado ficou tão...
+            explícito, que a calcinha foi parar no chão da sala. Tive que
+            censurar pro Insta, mas acabei de postar a versão 100% crua no nosso
+            chat.
+          </p>
+        </article>
 
-            <article class="diary-post">
-                <div class="post-header"><span class="post-date">Sábado, 18:30 PM</span><span class="post-tag">Bastidores</span></div>
-                <p class="post-text">Acabei de sair do banho depois do treino. A toalha não cobriu quase nada, e eu deixei a câmera ligada de propósito enquanto passava óleo no corpo todo. O áudio desse vídeo... confesso que até eu fiquei molhada e com vergonha de ouvir depois, <span class="post-blur">principalmente nos gemidos finais</span>. Só não espalha, ok?</p>
-            </article>
-        </div>
+        <article class="diary-post">
+          <div class="post-header">
+            <span class="post-date">Sábado, 18:30 PM</span
+            ><span class="post-tag">Bastidores</span>
+          </div>
+          <p class="post-text">
+            Acabei de sair do banho depois do treino. A toalha não cobriu quase
+            nada, e eu deixei a câmera ligada de propósito enquanto passava óleo
+            no corpo todo. O áudio desse vídeo... confesso que até eu fiquei
+            molhada e com vergonha de ouvir depois,
+            <span class="post-blur">principalmente nos gemidos finais</span>. Só
+            não espalha, ok?
+          </p>
+        </article>
+      </div>
 
-        <div style="text-align: center;">
-            <a href="/vip" class="btn-cta btn-cta--red" style="max-width: 400px;">Ver os vídeos desses relatos</a>
-        </div>
+      <div style="text-align: center">
+        <a href="/vip" class="btn-cta btn-cta--red" style="max-width: 400px"
+          >Ver os vídeos desses relatos</a
+        >
+      </div>
     </main>
 
     <footer>
-        <p class="footer-tag">CONTEÚDO ESTRITAMENTE +18</p>
-        <p style="color: var(--clr-text-dim); font-size: 12px;">&copy; 2026 Giulia Garcia Oficial.</p>
+      <p class="footer-tag">CONTEÚDO ESTRITAMENTE +18</p>
+      <p style="color: var(--clr-text-dim); font-size: 12px">
+        &copy; 2026 Giulia Garcia Oficial.
+      </p>
     </footer>
-</body>
+  </body>
 </html>
