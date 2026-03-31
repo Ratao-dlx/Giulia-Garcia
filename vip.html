@@ -3,216 +3,409 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>VIP | Giulia Garcia</title>
+    <title>Assinatura VIP | Giulia Garcia</title>
     <link rel="stylesheet" href="style.css" />
     <style>
-      .vip-header {
-        text-align: center;
-        padding: 40px 0 60px 0;
+      /* Ajuste do Body para acomodar o Timer Bar superior */
+      body {
+        padding-top: 140px;
       }
-      .vip-header h1 {
-        font-size: 42px;
-        font-weight: 900;
-        letter-spacing: -1px;
-        margin-bottom: 10px;
+      .navbar {
+        top: 40px;
       }
 
-      .pricing-table {
+      /* ==========================================================================
+           COMPONENTES ESPECÍFICOS DA PÁGINA DE VENDAS
+           ========================================================================== */
+      .timer-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 40px;
+        background-color: var(--color-danger);
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 13px;
+        z-index: 1001;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
+
+      .pricing-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 25px;
+        margin-bottom: 50px;
         align-items: stretch;
       }
 
-      .plan-card {
-        background: var(--surface-dark);
-        border: 1px solid rgba(255, 255, 255, 0.05);
-        border-radius: 12px;
+      .pricing-card {
+        background-color: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: 20px;
         padding: 40px 30px;
+        position: relative;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         display: flex;
         flex-direction: column;
-        transition: 0.3s;
       }
 
-      /* DESTAQUE OURO - ARQUITETURA CRO */
-      .plan-card.pro {
-        border: 1px solid var(--primary-red);
-        transform: scale(1.03);
-        position: relative;
+      .pricing-card:hover {
+        transform: translateY(-8px);
+        border-color: var(--color-border-focus);
+      }
+
+      /* Destaque do Plano Ouro */
+      .pricing-card.ouro {
         background: linear-gradient(
           180deg,
-          #1a050a 0%,
-          var(--surface-dark) 100%
+          var(--color-surface-hover) 0%,
+          var(--color-background) 100%
         );
-        box-shadow: 0 10px 40px rgba(225, 29, 72, 0.15);
+        border: 1px solid rgba(212, 175, 55, 0.4);
+        transform: scale(1.05);
+        z-index: 10;
+        box-shadow: var(--shadow-card);
       }
-      .pro-badge {
+
+      .pricing-card.ouro:hover {
+        transform: scale(1.05) translateY(-8px);
+      }
+
+      .badge-destaque {
         position: absolute;
-        top: -12px;
+        top: -14px;
         left: 50%;
         transform: translateX(-50%);
-        background: var(--primary-red);
-        color: #fff;
+        background: linear-gradient(
+          90deg,
+          var(--color-gold-main),
+          var(--color-gold-dark)
+        );
+        color: #000000;
         font-size: 11px;
         font-weight: 900;
-        padding: 4px 15px;
+        padding: 6px 20px;
         border-radius: 20px;
+        letter-spacing: 1.5px;
         text-transform: uppercase;
-        letter-spacing: 2px;
+      }
+
+      .plan-header {
+        margin-bottom: 30px;
+        text-align: left;
       }
 
       .plan-name {
-        color: var(--text-muted);
-        font-size: 14px;
+        font-size: 16px;
         font-weight: 800;
+        color: var(--color-text-secondary);
         text-transform: uppercase;
-        letter-spacing: 2px;
-        margin-bottom: 10px;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
       }
-      .plan-card.pro .plan-name {
-        color: var(--primary-red);
+
+      .pricing-card.ouro .plan-name {
+        color: var(--color-gold-main);
       }
 
       .plan-price {
-        font-size: 48px;
+        font-size: 42px;
         font-weight: 900;
-        color: #fff;
-        margin-bottom: 30px;
-      }
-      .plan-price span {
-        font-size: 14px;
-        color: var(--text-muted);
-        font-weight: 400;
+        color: var(--color-text-primary);
+        display: flex;
+        align-items: baseline;
+        gap: 5px;
       }
 
-      .plan-features {
+      .plan-price span {
+        font-size: 15px;
+        font-weight: 500;
+        color: var(--color-text-muted);
+      }
+
+      .features-list {
         list-style: none;
         margin-bottom: 40px;
+        text-align: left;
         flex-grow: 1;
       }
-      .plan-features li {
+
+      .features-list li {
         display: flex;
         align-items: flex-start;
-        gap: 12px;
-        margin-bottom: 15px;
-        font-size: 14px;
+        gap: 15px;
+        font-size: 15px;
         color: #d4d4d8;
+        margin-bottom: 18px;
       }
-      .check {
-        color: #22c55e;
+
+      .check-icon {
+        color: var(--color-success);
         font-weight: 900;
+        font-size: 16px;
       }
-      .cross {
-        color: #52525b;
-        font-weight: 900;
+
+      .pricing-card.ouro .check-icon {
+        color: var(--color-gold-main);
       }
-      .disabled {
-        color: #52525b;
+
+      .feature-disabled {
+        color: var(--color-text-muted);
         text-decoration: line-through;
       }
 
-      .secure-badge {
-        text-align: center;
-        margin-top: 40px;
-        font-size: 12px;
-        color: var(--text-muted);
+      .cross-icon {
+        color: var(--color-text-muted);
+        font-weight: 900;
+        font-size: 16px;
+      }
+
+      .security-badge {
+        font-size: 13px;
+        color: var(--color-text-secondary);
+        margin-top: 20px;
         display: flex;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
         gap: 8px;
+      }
+
+      /* ==========================================================================
+           NOTIFICAÇÃO TOAST (PROVA SOCIAL)
+           ========================================================================== */
+      .toast-notification {
+        visibility: hidden;
+        min-width: 300px;
+        background-color: rgba(24, 24, 27, 0.95);
+        color: #ffffff;
+        border-radius: 12px;
+        padding: 18px 24px;
+        position: fixed;
+        z-index: 9999;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -50px;
+        font-size: 14px;
+        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.6);
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        opacity: 0;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 1px solid var(--color-border);
+        border-left: 4px solid var(--color-success);
+      }
+
+      .toast-notification.show {
+        visibility: visible;
+        opacity: 1;
+        bottom: 40px;
+      }
+
+      .toast-dot {
+        background-color: var(--color-success);
+        border-radius: 50%;
+        width: 10px;
+        height: 10px;
+        box-shadow: 0 0 12px var(--color-success);
+        flex-shrink: 0;
+      }
+
+      @media (max-width: 768px) {
+        .pricing-card.ouro {
+          transform: scale(1);
+        }
+        .pricing-card.ouro:hover {
+          transform: translateY(-8px);
+        }
+        .pricing-grid {
+          gap: 40px;
+        }
       }
     </style>
   </head>
   <body>
-    <header class="header-nav">
-      <a href="/" class="logo">Giulia<span>Garcia</span></a>
-      <div class="nav-links">
-        <a href="/">Início</a>
-        <a href="/diario">Diário</a>
-        <a href="/galeria">Galeria</a>
-        <a href="/vip" class="active">Acesso VIP</a>
-      </div>
-    </header>
+    <div class="timer-bar">
+      ⚠️ Vagas encerram em:
+      <span id="countdown-timer" style="margin-left: 8px">15:00</span>
+    </div>
+
+    <nav class="navbar">
+      <a href="/">Início</a>
+      <a href="/diario">Diário</a>
+      <a href="/galeria">Galeria</a>
+      <a href="/vip" class="active">Acesso VIP</a>
+    </nav>
 
     <main class="container">
-      <div class="vip-header">
-        <h1>Escolha sua <span>Assinatura</span></h1>
-        <p style="color: var(--text-muted)">
-          Acesso liberado imediatamente após o pagamento.
+      <header>
+        <h1 class="hero-title">Escolha sua <span>Assinatura</span></h1>
+        <p class="hero-subtitle">
+          Desbloqueie todo o material e garanta atendimento exclusivo.
         </p>
-      </div>
+      </header>
 
-      <div class="pricing-table">
-        <div class="plan-card">
-          <div class="plan-name">Bronze</div>
-          <div class="plan-price">R$ 39,90<span> /mês</span></div>
-          <ul class="plan-features">
-            <li><span class="check">✓</span> Acesso à galeria inicial</li>
-            <li><span class="check">✓</span> Atualizações semanais</li>
-            <li class="disabled"><span class="cross">✕</span> Chat Privado</li>
+      <section class="pricing-grid">
+        <div class="pricing-card">
+          <div class="plan-header">
+            <div class="plan-name">Pacote Bronze</div>
+            <div class="plan-price">R$ 39,90<span>/mês</span></div>
+          </div>
+          <ul class="features-list">
+            <li><span class="check-icon">✓</span> Acesso à galeria inicial</li>
+            <li><span class="check-icon">✓</span> Atualizações semanais</li>
+            <li><span class="check-icon">✓</span> Fotos sem censura</li>
+            <li class="feature-disabled">
+              <span class="cross-icon">✗</span> Chat privado VIP
+            </li>
           </ul>
           <a
-            href="https://pay.kiwify.com.br/lCS8Yf4?src=vip_bronze"
-            class="btn-ghost"
-            style="width: 100%; text-align: center"
+            href="https://pay.kiwify.com.br/lCS8Yf4?src=vip_page_bronze"
+            class="btn btn-normal"
             >Assinar Bronze</a
           >
         </div>
 
-        <div class="plan-card pro">
-          <div class="pro-badge">Acesso Total</div>
-          <div class="plan-name">Ouro Personal</div>
-          <div class="plan-price">R$ 149,90<span> /trimestre</span></div>
-          <ul class="plan-features">
+        <div class="pricing-card ouro">
+          <div class="badge-destaque">Mais Escolhido</div>
+          <div class="plan-header">
+            <div class="plan-name">Ouro Personal</div>
+            <div class="plan-price">R$ 149,90<span>/trimestre</span></div>
+          </div>
+          <ul class="features-list">
             <li>
-              <span class="check">✓</span>
-              <strong>Acervo Completo e Sem Censura</strong>
+              <span class="check-icon">✓</span>
+              <strong>Acesso total e ilimitado</strong>
             </li>
+            <li><span class="check">✓</span> Bastidores inéditos</li>
             <li>
-              <span class="check">✓</span>
-              <strong>Chat VIP 1 a 1 Comigo</strong>
+              <span class="check-icon">✓</span>
+              <strong>Chat direto VIP (1 a 1)</strong>
             </li>
-            <li><span class="check">✓</span> 1 Pedido Exclusivo / Mês</li>
-            <li><span class="check">✓</span> Close Friends do Instagram</li>
+            <li><span class="check-icon">✓</span> Pedidos personalizados</li>
           </ul>
           <a
-            href="https://pay.kiwify.com.br/FcTkho0?src=vip_ouro"
-            class="btn-premium"
-            style="width: 100%"
+            href="https://pay.kiwify.com.br/FcTkho0?src=vip_page_ouro"
+            class="btn btn-premium"
             >Desbloquear Ouro</a
           >
         </div>
 
-        <div class="plan-card">
-          <div class="plan-name">Prata VIP</div>
-          <div class="plan-price">R$ 69,90<span> /mês</span></div>
-          <ul class="plan-features">
-            <li><span class="check">✓</span> Acervo Intermediário</li>
-            <li><span class="check">✓</span> Áudios Exclusivos</li>
-            <li class="disabled"><span class="cross">✕</span> Chat Direto</li>
+        <div class="pricing-card">
+          <div class="plan-header">
+            <div class="plan-name">Pacote Prata</div>
+            <div class="plan-price">R$ 69,90<span>/mês</span></div>
+          </div>
+          <ul class="features-list">
+            <li><span class="check-icon">✓</span> Acervo intermediário</li>
+            <li><span class="check-icon">✓</span> Áudios exclusivos diários</li>
+            <li class="feature-disabled">
+              <span class="cross-icon">✗</span> Pedidos exclusivos
+            </li>
+            <li class="feature-disabled">
+              <span class="cross-icon">✗</span> Chat direto
+            </li>
           </ul>
           <a
-            href="https://pay.kiwify.com.br/15CyLBQ?src=vip_prata"
-            class="btn-ghost"
-            style="width: 100%; text-align: center"
+            href="https://pay.kiwify.com.br/15CyLBQ?src=vip_page_prata"
+            class="btn btn-normal"
             >Assinar Prata</a
           >
         </div>
-      </div>
+      </section>
 
-      <div class="secure-badge">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+      <div class="security-badge">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          width="16"
+          height="16"
+          fill="currentColor"
+        >
           <path
             d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"
           />
         </svg>
-        Checkout Blindado. Seu pagamento é processado anonimamente pela Kiwify.
+        Pagamento 100% Seguro, Processado e Garantido pela Kiwify.
       </div>
     </main>
 
-    <footer class="footer">
-      <div class="footer-warning">⚠️ Ambiente Estritamente +18</div>
-      <p>&copy; 2026 Giulia Garcia. Acesso Restrito.</p>
-    </footer>
+    <div id="sales-toast" class="toast-notification">
+      <div class="toast-dot"></div>
+      <div id="toast-message">Notificação de venda</div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // 1. SISTEMA DE COUNTDOWN (Persistente no SessionStorage)
+        function initTimer() {
+          const timerKey = "vip_session_timer";
+          let timeInSeconds = sessionStorage.getItem(timerKey)
+            ? parseInt(sessionStorage.getItem(timerKey))
+            : 15 * 60;
+          const displayElement = document.getElementById("countdown-timer");
+
+          if (!displayElement) return;
+
+          const interval = setInterval(function () {
+            let minutes = parseInt(timeInSeconds / 60, 10);
+            let seconds = parseInt(timeInSeconds % 60, 10);
+
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            displayElement.textContent = minutes + ":" + seconds;
+
+            if (--timeInSeconds > 0) {
+              sessionStorage.setItem(timerKey, timeInSeconds);
+            } else {
+              clearInterval(interval);
+              displayElement.textContent = "00:00";
+            }
+          }, 1000);
+        }
+
+        // 2. SISTEMA DE PROVA SOCIAL FAKE (Toast)
+        function initSocialProof() {
+          const names = [
+            "Lucas M.",
+            "Rafael T.",
+            "João V.",
+            "Pedro S.",
+            "Matheus C.",
+            "Gabriel A.",
+            "Felipe R.",
+            "Thiago P.",
+          ];
+          const toastElement = document.getElementById("sales-toast");
+          const messageElement = document.getElementById("toast-message");
+
+          if (!toastElement || !messageElement) return;
+
+          function triggerToast() {
+            const randomName = names[Math.floor(Math.random() * names.length)];
+            messageElement.innerHTML = `<strong>${randomName}</strong> acabou de garantir o pacote Ouro!`;
+            toastElement.classList.add("show");
+
+            setTimeout(() => {
+              toastElement.classList.remove("show");
+            }, 4000);
+          }
+
+          // Gatilho inicial rápido, depois repete aleatoriamente
+          setTimeout(triggerToast, 3000);
+          setInterval(triggerToast, 25000);
+        }
+
+        // Inicializar scripts
+        initTimer();
+        initSocialProof();
+      });
+    </script>
   </body>
 </html>

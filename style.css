@@ -1,16 +1,37 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap");
+/* ==========================================================================
+   1. IMPORTAÇÕES E VARIÁVEIS GLOBAIS
+   ========================================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&display=swap");
 
 :root {
-  --bg-dark: #030303;
-  --surface-dark: #0a0a0a;
-  --surface-glass: rgba(10, 10, 10, 0.7);
-  --primary-red: #e11d48;
-  --dark-red: #881337;
-  --text-main: #ffffff;
-  --text-muted: #71717a;
-  --border-glow: rgba(225, 29, 72, 0.3);
+  /* Paleta de Cores Premium (Dark & Gold) */
+  --color-background: #09090b;
+  --color-surface: #121214;
+  --color-surface-hover: #18181b;
+
+  --color-gold-light: #f3e5ab;
+  --color-gold-main: #d4af37;
+  --color-gold-dark: #b5952f;
+
+  --color-text-primary: #f4f4f5;
+  --color-text-secondary: #a1a1aa;
+  --color-text-muted: #52525b;
+
+  --color-border: #27272a;
+  --color-border-focus: #3f3f46;
+
+  --color-success: #10b981;
+  --color-danger: #ef4444;
+
+  /* Sombras e Efeitos */
+  --shadow-gold: 0 4px 20px rgba(212, 175, 55, 0.25);
+  --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  --glass-blur: blur(12px);
 }
 
+/* ==========================================================================
+   2. RESET E TIPOGRAFIA BASE
+   ========================================================================== */
 * {
   margin: 0;
   padding: 0;
@@ -19,163 +40,176 @@
 }
 
 body {
-  background-color: var(--bg-dark);
-  color: var(--text-main);
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  padding-top: 100px; /* Compensa a navbar fixa */
+  padding-bottom: 60px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  -webkit-font-smoothing: antialiased;
-  padding-top: 80px;
 }
 
-/* CABEÇALHO FIXO COM BLUR (MISTÉRIO) */
-.header-nav {
+/* ==========================================================================
+   3. NAVEGAÇÃO (GLASSMORPHISM)
+   ========================================================================== */
+.navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 80px;
-  background: var(--surface-glass);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  height: 70px;
+  background: rgba(9, 9, 11, 0.85);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid var(--color-border);
   z-index: 1000;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 0 5%;
-}
-
-.logo {
-  font-size: 24px;
-  font-weight: 900;
-  color: var(--text-main);
-  text-decoration: none;
-  letter-spacing: -1px;
-  text-transform: uppercase;
-}
-.logo span {
-  color: var(--primary-red);
-}
-
-.nav-links {
-  display: flex;
   gap: 40px;
+  transition: all 0.3s ease;
 }
-.nav-links a {
-  color: var(--text-muted);
+
+.navbar a {
+  color: var(--color-text-secondary);
   text-decoration: none;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  transition: all 0.3s ease;
-  position: relative;
-  padding-bottom: 5px;
-}
-.nav-links a:hover,
-.nav-links a.active {
-  color: var(--text-main);
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-}
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0%;
-  height: 2px;
-  background-color: var(--primary-red);
-  transition: all 0.3s ease;
-  transform: translateX(-50%);
-  box-shadow: 0 0 10px var(--primary-red);
-}
-.nav-links a:hover::after,
-.nav-links a.active::after {
-  width: 100%;
+  letter-spacing: 1.5px;
+  transition: color 0.3s ease;
 }
 
-main {
-  flex: 1;
-  padding-bottom: 60px;
+.navbar a:hover,
+.navbar a.active {
+  color: var(--color-text-primary);
 }
+
+/* ==========================================================================
+   4. ESTRUTURA E CONTAINERS
+   ========================================================================== */
 .container {
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 20px;
+  text-align: center;
+  flex: 1;
 }
 
-/* ANIMAÇÃO DE PULSAÇÃO (DESEJO) */
-@keyframes heartbeat {
+.container-narrow {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ==========================================================================
+   5. TIPOGRAFIA DE DESTAQUE (HERO)
+   ========================================================================== */
+.hero-title {
+  font-size: 46px;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.hero-title span {
+  background: linear-gradient(
+    90deg,
+    var(--color-gold-main),
+    var(--color-gold-light)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  color: var(--color-text-secondary);
+  font-size: 18px;
+  margin-bottom: 50px;
+  font-weight: 400;
+}
+
+/* ==========================================================================
+   6. BOTÕES E ANIMAÇÕES
+   ========================================================================== */
+.btn {
+  display: inline-block;
+  padding: 18px 36px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 800;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-transform: uppercase;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn-normal {
+  background-color: var(--color-border);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border-focus);
+}
+
+.btn-normal:hover {
+  background-color: var(--color-border-focus);
+}
+
+/* Animação Shimmer Ouro Avançada */
+@keyframes shimmerGold {
   0% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(225, 29, 72, 0.7);
-  }
-  50% {
-    transform: scale(1.02);
-    box-shadow: 0 0 20px 0 rgba(225, 29, 72, 0.4);
+    background-position: 200% center;
   }
   100% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(225, 29, 72, 0);
+    background-position: -200% center;
   }
 }
 
 .btn-premium {
-  display: inline-block;
-  padding: 18px 40px;
-  border-radius: 8px;
-  font-size: 15px;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #fff;
-  text-decoration: none;
-  text-align: center;
-  cursor: pointer;
-  background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
-  border: 1px solid #ff4c4c;
-  animation: heartbeat 2.5s infinite;
-  transition: 0.3s;
-}
-.btn-premium:hover {
-  filter: brightness(1.2);
+  background: linear-gradient(
+    90deg,
+    var(--color-gold-main) 0%,
+    var(--color-gold-light) 50%,
+    var(--color-gold-main) 100%
+  );
+  background-size: 200% auto;
+  color: #000000;
+  border: none;
+  box-shadow: var(--shadow-gold);
+  animation: shimmerGold 4s linear infinite;
 }
 
-.btn-ghost {
-  display: inline-block;
-  padding: 16px 35px;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 700;
+.btn-premium:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(212, 175, 55, 0.4);
+}
+
+/* ==========================================================================
+   7. RODAPÉ (FOOTER)
+   ========================================================================== */
+.footer {
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 80px;
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+}
+
+.footer p {
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.footer-warning {
+  color: var(--color-gold-main);
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: var(--text-main);
-  text-decoration: none;
-  border: 1px solid #3f3f46;
-  background: rgba(255, 255, 255, 0.02);
-  transition: 0.3s;
-}
-.btn-ghost:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: var(--text-muted);
-}
-
-/* RODAPÉ SÓLIDO */
-.footer {
-  background-color: var(--surface-dark);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 40px 20px;
-  text-align: center;
-}
-.footer-warning {
-  color: var(--primary-red);
-  font-weight: 900;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  margin-bottom: 15px;
-}
-.footer p {
-  color: var(--text-muted);
-  font-size: 12px;
 }

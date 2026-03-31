@@ -3,91 +3,63 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Giulia Garcia | Portal Privado</title>
+    <title>Giulia Garcia | Oficial</title>
     <link rel="stylesheet" href="style.css" />
     <style>
-      .hero {
-        text-align: center;
-        padding: 80px 0 40px 0;
-      }
-      .hero h1 {
-        font-size: 56px;
-        font-weight: 900;
-        text-transform: uppercase;
-        letter-spacing: -2px;
-        margin-bottom: 20px;
-        line-height: 1.1;
-      }
-      .hero h1 span {
-        color: var(--primary-red);
-        text-shadow: 0 0 20px rgba(225, 29, 72, 0.4);
-      }
-      .hero p {
-        font-size: 18px;
-        color: var(--text-muted);
-        max-width: 500px;
-        margin: 0 auto 40px auto;
+      /* Estilos específicos apenas para a estrutura desta página */
+      .media-placeholder {
+        background-color: var(--color-surface);
+        border: 1px solid var(--color-border);
+        height: 500px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 50px;
+        overflow: hidden;
+        box-shadow: var(--shadow-card);
       }
 
-      .teaser-box {
-        position: relative;
-        max-width: 800px;
-        height: 400px;
-        margin: 0 auto;
-        border-radius: 16px;
-        overflow: hidden;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        background: url("placeholder-sua-imagem.jpg") center/cover; /* Troque pela foto real */
+      .media-placeholder p {
+        color: var(--color-text-secondary);
+        font-weight: 600;
+        letter-spacing: 1px;
       }
-      .teaser-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          0deg,
-          var(--bg-dark) 0%,
-          rgba(3, 3, 3, 0.3) 100%
-        );
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: center;
-        padding-bottom: 40px;
+
+      .cta-wrapper {
+        max-width: 450px;
+        margin: 0 auto;
       }
     </style>
   </head>
   <body>
-    <header class="header-nav">
-      <a href="/" class="logo">Giulia<span>Garcia</span></a>
-      <div class="nav-links">
-        <a href="/" class="active">Início</a>
-        <a href="/diario">Diário</a>
-        <a href="/galeria">Galeria</a>
-        <a href="/vip">Acesso VIP</a>
-      </div>
-    </header>
+    <nav class="navbar">
+      <a href="/" class="active">Início</a>
+      <a href="/diario">Diário</a>
+      <a href="/galeria">Galeria</a>
+      <a href="/vip">Acesso VIP</a>
+    </nav>
 
     <main class="container">
-      <section class="hero">
-        <h1>Regras não se<br />aplicam <span>aqui.</span></h1>
-        <p>
-          O lado que o algoritmo censura. Sem filtros, sem limites e
-          estritamente confidencial.
+      <header>
+        <h1 class="hero-title">Bem-vindo ao meu <span>Mundo Privado</span></h1>
+        <p class="hero-subtitle">
+          Descubra o que o algoritmo não permite que eu mostre.
         </p>
+      </header>
+
+      <section class="media-placeholder">
+        <p>[Área Reservada para Foto ou Vídeo de Capa]</p>
       </section>
 
-      <section class="teaser-box">
-        <div class="teaser-overlay">
-          <a href="/vip" class="btn-premium">Desbloquear Meu Acesso</a>
-        </div>
+      <section class="cta-wrapper">
+        <a href="/vip" class="btn btn-premium">Desbloquear Meu Acesso Agora</a>
       </section>
     </main>
 
     <footer class="footer">
-      <div class="footer-warning">⚠️ Ambiente Estritamente +18</div>
-      <p>&copy; 2026 Giulia Garcia. Acesso Restrito.</p>
+      <p class="footer-warning">⚠️ Ambiente Estritamente +18</p>
+      <p>&copy; 2026 Giulia Garcia Oficial. Todos os direitos reservados.</p>
     </footer>
   </body>
 </html>
