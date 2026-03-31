@@ -1,38 +1,130 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Galeria | Giulia Garcia</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <style>
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 50px; }
-        .gallery-item { height: 350px; background: var(--card-bg); border-radius: 16px; border: 1px solid var(--border); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(5px); }
-        .locked-layer { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); backdrop-filter: blur(12px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; }
-        .lock-icon { font-size: 40px; }
-        .lock-text { color: var(--accent); font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
+      .gallery-header {
+        text-align: center;
+        padding: 60px 0 40px 0;
+      }
+      .gallery-header h1 {
+        font-size: 40px;
+        font-weight: 900;
+        letter-spacing: -1px;
+      }
+
+      .media-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+      }
+
+      .media-card {
+        background: var(--surface-dark);
+        height: 350px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .blur-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="none"><rect width="100" height="100" fill="%231a1a1a"/></svg>')
+          center/cover;
+        filter: blur(15px);
+        opacity: 0.8;
+        z-index: 1;
+      }
+      .lock-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+      }
+      .lock-icon {
+        font-size: 45px;
+        margin-bottom: 15px;
+        filter: drop-shadow(0 0 10px rgba(225, 29, 72, 0.5));
+      }
+      .lock-text {
+        color: #fff;
+        font-weight: 800;
+        text-transform: uppercase;
+        font-size: 14px;
+        letter-spacing: 1px;
+      }
+      .lock-sub {
+        color: var(--primary-red);
+        font-size: 12px;
+        margin-top: 5px;
+        font-weight: 700;
+      }
     </style>
-</head>
-<body>
-    <nav class="navbar">
+  </head>
+  <body>
+    <header class="header-nav">
+      <a href="/" class="logo">Giulia<span>Garcia</span></a>
+      <div class="nav-links">
         <a href="/">Início</a>
         <a href="/diario">Diário</a>
         <a href="/galeria" class="active">Galeria</a>
         <a href="/vip">Acesso VIP</a>
-    </nav>
+      </div>
+    </header>
 
-    <div class="container">
-        <h1 class="hero-title">Galeria <span>Privada</span></h1>
-        <p class="hero-subtitle">Mais de 500+ mídias exclusivas e sem censura esperando por você.</p>
+    <main class="container">
+      <div class="gallery-header">
+        <h1>Acervo <span>Trancado</span></h1>
+        <p style="color: var(--text-muted); margin-top: 10px">
+          500+ Mídias Exclusivas. Qualidade 4K.
+        </p>
+      </div>
 
-        <div class="gallery-grid">
-            <div class="gallery-item"><div class="locked-layer"><div class="lock-icon">🔒</div><div class="lock-text">Exclusivo VIP</div></div></div>
-            <div class="gallery-item"><div class="locked-layer"><div class="lock-icon">🔒</div><div class="lock-text">Exclusivo VIP</div></div></div>
-            <div class="gallery-item"><div class="locked-layer"><div class="lock-icon">🔒</div><div class="lock-text">Exclusivo VIP</div></div></div>
-            <div class="gallery-item"><div class="locked-layer"><div class="lock-icon">🔒</div><div class="lock-text">Exclusivo VIP</div></div></div>
+      <div class="media-grid">
+        <div class="media-card">
+          <div class="blur-bg"></div>
+          <div class="lock-content">
+            <div class="lock-icon">🔒</div>
+            <div class="lock-text">Álbum Privado</div>
+            <div class="lock-sub">Mídia Oculta</div>
+          </div>
         </div>
+        <div class="media-card">
+          <div class="blur-bg"></div>
+          <div class="lock-content">
+            <div class="lock-icon">🔒</div>
+            <div class="lock-text">Vídeo Sem Filtro</div>
+            <div class="lock-sub">Mídia Oculta</div>
+          </div>
+        </div>
+        <div class="media-card">
+          <div class="blur-bg"></div>
+          <div class="lock-content">
+            <div class="lock-icon">🔒</div>
+            <div class="lock-text">Bastidores</div>
+            <div class="lock-sub">Mídia Oculta</div>
+          </div>
+        </div>
+      </div>
 
-        <a href="/vip" class="btn btn-main" style="max-width: 400px; width: 100%;">DESBLOQUEAR GALERIA</a>
-    </div>
-</body>
+      <div style="text-align: center; margin-top: 50px">
+        <a href="/vip" class="btn-premium">Liberar Toda a Galeria</a>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-warning">⚠️ Ambiente Estritamente +18</div>
+      <p>&copy; 2026 Giulia Garcia. Acesso Restrito.</p>
+    </footer>
+  </body>
 </html>
