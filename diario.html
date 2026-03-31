@@ -1,83 +1,33 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Diário Íntimo | Giulia Garcia</title>
-    <link rel="stylesheet" href="style.css" />
-    <style>
-      .diary-card {
-        text-align: left;
-        background-color: var(--color-surface);
-        padding: 50px;
-        border-radius: 20px;
-        border: 1px solid var(--color-border);
-        margin-bottom: 50px;
-        box-shadow: var(--shadow-card);
-      }
-
-      .diary-date {
-        color: var(--color-gold-main);
-        font-weight: 800;
-        font-size: 13px;
-        margin-bottom: 25px;
-        display: block;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-      }
-
-      .diary-text {
-        color: #d4d4d8;
-        font-size: 17px;
-        line-height: 1.8;
-        margin-bottom: 20px;
-      }
-
-      .cta-wrapper {
-        max-width: 450px;
-        margin: 0 auto;
-      }
-    </style>
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diário | Giulia Garcia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
     <nav class="navbar">
-      <a href="/">Início</a>
-      <a href="/diario" class="active">Diário</a>
-      <a href="/galeria">Galeria</a>
-      <a href="/vip">Acesso VIP</a>
+        <a href="/">Início</a>
+        <a href="/diario" class="active">Diário</a>
+        <a href="/galeria">Galeria</a>
+        <a href="/vip">Acesso VIP</a>
     </nav>
 
-    <main class="container-narrow">
-      <header style="text-align: center">
-        <h1 class="hero-title">Meu <span>Diário</span></h1>
-        <p class="hero-subtitle">Os bastidores que ninguém mais vê.</p>
-      </header>
+    <main class="container" style="max-width: 800px; padding-top: 60px;">
+        <header style="text-align: center; margin-bottom: 50px;">
+            <h1 class="hero-title">MEU <span>DIÁRIO</span></h1>
+        </header>
 
-      <article class="diary-card">
-        <span class="diary-date">Nota Recente</span>
-        <p class="diary-text">
-          Oi... Se você chegou até aqui, é porque quer saber um pouco mais do
-          que rola por trás das câmeras.
-        </p>
-        <p class="diary-text">
-          Eu decidi criar esse espaço oficial porque estava cansada das
-          restrições das redes normais. Aqui, eu posto meus conteúdos diários
-          sem filtro, meus áudios privados e converso direto com quem realmente
-          importa.
-        </p>
-        <p class="diary-text">
-          Se você quer ter acesso total à minha galeria completa e falar comigo
-          no chat privado hoje mesmo, escolha um dos planos VIP.
-        </p>
-      </article>
-
-      <section class="cta-wrapper">
-        <a href="/vip" class="btn btn-premium">Quero Entrar Pro VIP</a>
-      </section>
+        <article style="background: var(--clr-surface); padding: 50px; border-radius: 20px; border: 1px solid var(--clr-border); border-left: 5px solid var(--clr-primary);">
+            <p style="color: var(--clr-primary); font-weight: 900; margin-bottom: 20px; font-size: 12px; letter-spacing: 2px;">NOTA PRIVADA</p>
+            <p style="font-size: 18px; line-height: 1.8; margin-bottom: 30px; color: #e4e4e7;">
+                Criei este espaço oficial porque cansei da censura. Aqui eu conto o que penso, posto meus áudios de bom dia e mostro os bastidores que o Instagram jamais veria. Se você quer intimidade real e falar direto comigo, o VIP é o seu lugar.
+            </p>
+            <div style="text-align: center;">
+                <a href="/vip" class="btn-cta">Continuar Lendo no VIP</a>
+            </div>
+        </article>
     </main>
-
-    <footer class="footer">
-      <p>&copy; 2026 Giulia Garcia Oficial. Todos os direitos reservados.</p>
-    </footer>
-  </body>
+</body>
 </html>

@@ -1,215 +1,68 @@
-/* ==========================================================================
-   1. IMPORTAÇÕES E VARIÁVEIS GLOBAIS
-   ========================================================================== */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&display=swap");
+/* GIULIA GARCIA PREMIUM FRAMEWORK v3.0
+   Design System: Deep Crimson / OLED Black
+*/
 
 :root {
-  /* Paleta de Cores Premium (Dark & Gold) */
-  --color-background: #09090b;
-  --color-surface: #121214;
-  --color-surface-hover: #18181b;
+    /* Cores Primárias */
+    --clr-bg: #030303;
+    --clr-surface: #0a0a0a;
+    --clr-surface-light: #121212;
+    --clr-primary: #D00000;
+    --clr-primary-glow: rgba(208, 0, 0, 0.5);
+    
+    /* Tipografia */
+    --clr-text: #FFFFFF;
+    --clr-text-dim: #71717a;
+    --clr-border: #27272a;
 
-  --color-gold-light: #f3e5ab;
-  --color-gold-main: #d4af37;
-  --color-gold-dark: #b5952f;
-
-  --color-text-primary: #f4f4f5;
-  --color-text-secondary: #a1a1aa;
-  --color-text-muted: #52525b;
-
-  --color-border: #27272a;
-  --color-border-focus: #3f3f46;
-
-  --color-success: #10b981;
-  --color-danger: #ef4444;
-
-  /* Sombras e Efeitos */
-  --shadow-gold: 0 4px 20px rgba(212, 175, 55, 0.25);
-  --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-  --glass-blur: blur(12px);
+    /* Animações Bézier (Movimento Orgânico) */
+    --transition-main: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* ==========================================================================
-   2. RESET E TIPOGRAFIA BASE
-   ========================================================================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Inter", sans-serif;
+/* 1. RESET DE ALTA PERFORMANCE */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body { 
+    background-color: var(--clr-bg); color: var(--clr-text); 
+    font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased;
+    display: flex; flex-direction: column; min-height: 100vh; padding-top: 80px;
 }
 
-body {
-  background-color: var(--color-background);
-  color: var(--color-text-primary);
-  line-height: 1.6;
-  padding-top: 100px; /* Compensa a navbar fixa */
-  padding-bottom: 60px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-/* ==========================================================================
-   3. NAVEGAÇÃO (GLASSMORPHISM)
-   ========================================================================== */
+/* 2. NAVBAR (GLASSMORPHISM AVANÇADO) */
 .navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 70px;
-  background: rgba(9, 9, 11, 0.85);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border-bottom: 1px solid var(--color-border);
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  transition: all 0.3s ease;
+    position: fixed; top: 0; width: 100%; height: 80px;
+    background: rgba(3, 3, 3, 0.8); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--clr-border); z-index: 9999;
+    display: flex; justify-content: center; align-items: center; gap: 40px;
 }
-
 .navbar a {
-  color: var(--color-text-secondary);
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  transition: color 0.3s ease;
+    color: var(--clr-text-dim); text-decoration: none; font-size: 13px; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 2px; transition: var(--transition-main);
+}
+.navbar a:hover, .navbar a.active { color: var(--clr-primary); text-shadow: 0 0 12px var(--clr-primary-glow); }
+
+/* 3. BOTÃO CTA (HEARTBEAT & SHIMMER) */
+.btn-cta {
+    position: relative; display: inline-flex; align-items: center; justify-content: center;
+    padding: 1.2rem 3rem; background: linear-gradient(135deg, #700000, var(--clr-primary));
+    color: #fff; text-decoration: none; font-weight: 900; text-transform: uppercase;
+    border-radius: 4px; border: 1px solid rgba(255,255,255,0.1); overflow: hidden;
+    transition: var(--transition-main); animation: heartbeat 2.5s infinite; cursor: pointer;
+}
+.btn-cta:hover { transform: scale(1.03); filter: brightness(1.2); box-shadow: 0 10px 40px var(--clr-primary-glow); }
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    10% { transform: scale(1.05); }
+    20% { transform: scale(1); }
+    30% { transform: scale(1.03); }
+    100% { transform: scale(1); }
 }
 
-.navbar a:hover,
-.navbar a.active {
-  color: var(--color-text-primary);
-}
+/* 4. UTILITIES */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; width: 100%; }
+.hero-title { font-size: 4rem; font-weight: 900; letter-spacing: -3px; margin-bottom: 1rem; line-height: 1; }
+.hero-title span { color: var(--clr-primary); }
+.hero-subtitle { color: var(--clr-text-dim); font-size: 1.2rem; margin-bottom: 3rem; }
 
-/* ==========================================================================
-   4. ESTRUTURA E CONTAINERS
-   ========================================================================== */
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 20px;
-  text-align: center;
-  flex: 1;
-}
-
-.container-narrow {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* ==========================================================================
-   5. TIPOGRAFIA DE DESTAQUE (HERO)
-   ========================================================================== */
-.hero-title {
-  font-size: 46px;
-  font-weight: 900;
-  letter-spacing: -1.5px;
-  margin-bottom: 15px;
-  line-height: 1.1;
-}
-
-.hero-title span {
-  background: linear-gradient(
-    90deg,
-    var(--color-gold-main),
-    var(--color-gold-light)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.hero-subtitle {
-  color: var(--color-text-secondary);
-  font-size: 18px;
-  margin-bottom: 50px;
-  font-weight: 400;
-}
-
-/* ==========================================================================
-   6. BOTÕES E ANIMAÇÕES
-   ========================================================================== */
-.btn {
-  display: inline-block;
-  padding: 18px 36px;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: 800;
-  text-align: center;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  text-transform: uppercase;
-  font-size: 15px;
-  letter-spacing: 0.5px;
-  cursor: pointer;
-  width: 100%;
-}
-
-.btn-normal {
-  background-color: var(--color-border);
-  color: var(--color-text-primary);
-  border: 1px solid var(--color-border-focus);
-}
-
-.btn-normal:hover {
-  background-color: var(--color-border-focus);
-}
-
-/* Animação Shimmer Ouro Avançada */
-@keyframes shimmerGold {
-  0% {
-    background-position: 200% center;
-  }
-  100% {
-    background-position: -200% center;
-  }
-}
-
-.btn-premium {
-  background: linear-gradient(
-    90deg,
-    var(--color-gold-main) 0%,
-    var(--color-gold-light) 50%,
-    var(--color-gold-main) 100%
-  );
-  background-size: 200% auto;
-  color: #000000;
-  border: none;
-  box-shadow: var(--shadow-gold);
-  animation: shimmerGold 4s linear infinite;
-}
-
-.btn-premium:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 25px rgba(212, 175, 55, 0.4);
-}
-
-/* ==========================================================================
-   7. RODAPÉ (FOOTER)
-   ========================================================================== */
-.footer {
-  text-align: center;
-  padding: 40px 20px;
-  margin-top: 80px;
-  border-top: 1px solid var(--color-border);
-  background-color: var(--color-surface);
-}
-
-.footer p {
-  color: var(--color-text-secondary);
-  font-size: 13px;
-  margin-bottom: 8px;
-}
-
-.footer-warning {
-  color: var(--color-gold-main);
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
+footer { padding: 4rem 2rem; border-top: 1px solid var(--clr-border); text-align: center; margin-top: auto; }

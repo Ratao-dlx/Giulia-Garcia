@@ -1,65 +1,34 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Giulia Garcia | Oficial</title>
-    <link rel="stylesheet" href="style.css" />
-    <style>
-      /* Estilos específicos apenas para a estrutura desta página */
-      .media-placeholder {
-        background-color: var(--color-surface);
-        border: 1px solid var(--color-border);
-        height: 500px;
-        border-radius: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 50px;
-        overflow: hidden;
-        box-shadow: var(--shadow-card);
-      }
-
-      .media-placeholder p {
-        color: var(--color-text-secondary);
-        font-weight: 600;
-        letter-spacing: 1px;
-      }
-
-      .cta-wrapper {
-        max-width: 450px;
-        margin: 0 auto;
-      }
-    </style>
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giulia Garcia | Portal Oficial</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
     <nav class="navbar">
-      <a href="/" class="active">Início</a>
-      <a href="/diario">Diário</a>
-      <a href="/galeria">Galeria</a>
-      <a href="/vip">Acesso VIP</a>
+        <a href="/" class="active">Início</a>
+        <a href="/diario">Diário</a>
+        <a href="/galeria">Galeria</a>
+        <a href="/vip">Acesso VIP</a>
     </nav>
 
-    <main class="container">
-      <header>
-        <h1 class="hero-title">Bem-vindo ao meu <span>Mundo Privado</span></h1>
-        <p class="hero-subtitle">
-          Descubra o que o algoritmo não permite que eu mostre.
-        </p>
-      </header>
-
-      <section class="media-placeholder">
-        <p>[Área Reservada para Foto ou Vídeo de Capa]</p>
-      </section>
-
-      <section class="cta-wrapper">
-        <a href="/vip" class="btn btn-premium">Desbloquear Meu Acesso Agora</a>
-      </section>
+    <main class="container" style="text-align: center; padding-top: 60px;">
+        <h1 class="hero-title">GIULIA <span>GARCIA</span></h1>
+        <p class="hero-subtitle">Onde o mistério encontra o desejo. Exclusivo e sem censura.</p>
+        
+        <div style="border: 1px solid var(--clr-border); border-radius: 20px; overflow: hidden; position: relative; box-shadow: 0 0 80px rgba(208, 0, 0, 0.1);">
+            <img src="CAPA.jpg" alt="Giulia Garcia" style="width: 100%; display: block; filter: contrast(1.1);">
+            <div style="position: absolute; bottom: 0; width: 100%; padding: 60px 20px; background: linear-gradient(to top, var(--clr-bg), transparent);">
+                <a href="/vip" class="btn-cta">Garantir Acesso Total</a>
+            </div>
+        </div>
     </main>
 
-    <footer class="footer">
-      <p class="footer-warning">⚠️ Ambiente Estritamente +18</p>
-      <p>&copy; 2026 Giulia Garcia Oficial. Todos os direitos reservados.</p>
+    <footer>
+        <p style="color: var(--clr-primary); font-weight: 900; letter-spacing: 3px; font-size: 12px; margin-bottom: 10px;">RESTRITO +18</p>
+        <p style="font-size: 12px; color: var(--clr-text-dim);">&copy; 2026 Todos os direitos reservados.</p>
     </footer>
-  </body>
+</body>
 </html>
